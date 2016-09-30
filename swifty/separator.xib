@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HeaderSection" customModule="swifty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cFZ-AB-frF">
+                    <rect key="frame" x="0.0" y="10" width="600" height="86"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPQ-gd-q2k">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="26"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="22"/>
+                            <color key="textColor" red="0.34267770400000003" green="0.54644551699999999" blue="0.47640620119999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sections" translatesAutoresizingMaskIntoConstraints="NO" id="Kdg-kR-VNM">
+                            <rect key="frame" x="25" y="26" width="550" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="9pa-76-bSQ"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.65616445774764498" green="1" blue="0.92451346584737137" alpha="0.82314116379310343" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="PPQ-gd-q2k" firstAttribute="leading" secondItem="cFZ-AB-frF" secondAttribute="leadingMargin" id="3hP-8o-XW2"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="PPQ-gd-q2k" secondAttribute="trailing" id="wqn-fd-1RA"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="tintColor" red="0.65616445769999998" green="1" blue="0.92451346580000004" alpha="0.82314116380000002" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="cFZ-AB-frF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Awu-nU-plq"/>
+                <constraint firstItem="cFZ-AB-frF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RHA-ue-sbN"/>
+                <constraint firstAttribute="trailing" secondItem="cFZ-AB-frF" secondAttribute="trailing" id="agV-r7-6mu"/>
+            </constraints>
+            <connections>
+                <outlet property="HeaderSection" destination="cFZ-AB-frF" id="bPt-5e-OFA"/>
+                <outlet property="SectionName" destination="PPQ-gd-q2k" id="xaO-gS-0Ve"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="sections" width="550" height="69"/>
+    </resources>
+</document>
