@@ -11,9 +11,17 @@ import UIKit
 class SkillTableViewCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var lvl: UIView!
     @IBOutlet weak var level: UILabel!
     @IBOutlet weak var progress: UIProgressView!
+    
+    var skill:Skill?{
+        didSet {
+            name.text = skill!.name
+            level.text = String(skill!.level)
+            let prog = skill!.level % 1
+            progress.progress = prog
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

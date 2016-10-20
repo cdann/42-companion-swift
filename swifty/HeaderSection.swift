@@ -23,7 +23,7 @@ class HeaderSection: UITableViewHeaderFooterView {
         
         super.init(coder: aDecoder)
         let image = UIImage(named: "confectionary")!
-        self.backgroundColor = UIColor(patternImage: image)
+        contentView.backgroundColor = UIColor(patternImage: image)
     }
     
 
