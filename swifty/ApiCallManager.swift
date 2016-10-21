@@ -52,8 +52,7 @@ class ApiCallManager {
     }
     
     func searchUser(login:String/*, fct_result:(User?) -> Void*/) {
-        print("pop")
-            let url = "https://api.intra.42.fr/v2/users/"+login
+            let url = "https://api.intra.42.fr/v2/users/"+login.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
             makeRequest(){
                 Alamofire.request(
                    .GET,
@@ -69,16 +68,18 @@ class ApiCallManager {
                         }
                         //fct_result(nil)
                     }
-                    guard let values = response.result.value as? [String: AnyObject],
-                        let usr = User(values:values) else{
-                            if let d = self.delegate {
-                                d.handleErrors("Malformed data received from user")
-                            }
-                            print("Malformed data received from user  ")
-                            return
-                    }
-                    if let d = self.delegate {
-                        d.treatResponse(usr)
+                    else {
+                        guard let values = response.result.value as? [String: AnyObject],
+                            let usr = User(values:values) else{
+                                if let d = self.delegate {
+                                    d.handleErrors("Malformed data received from user")
+                                }
+                                print("Malformed data received from user  ")
+                                return
+                        }
+                        if let d = self.delegate {
+                            d.treatResponse(usr)
+                        }
                     }
                     //fct_result(usr)
                 }

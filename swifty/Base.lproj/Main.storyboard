@@ -223,26 +223,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eb8-dJ-mdk">
-                                <rect key="frame" x="25" y="5" width="550" height="590"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Eb8-dJ-mdk" firstAttribute="centerY" secondItem="XFt-Fi-uE8" secondAttribute="centerY" id="Hfj-VW-4Q0"/>
-                            <constraint firstItem="Eb8-dJ-mdk" firstAttribute="centerX" secondItem="XFt-Fi-uE8" secondAttribute="centerX" id="KfA-Y3-7SC"/>
-                            <constraint firstItem="Eb8-dJ-mdk" firstAttribute="leading" secondItem="XFt-Fi-uE8" secondAttribute="leadingMargin" constant="5" id="OUz-5D-YUc"/>
-                            <constraint firstItem="Eb8-dJ-mdk" firstAttribute="height" secondItem="XFt-Fi-uE8" secondAttribute="height" id="VbJ-me-S8g"/>
-                            <constraint firstItem="fRH-NU-pem" firstAttribute="top" secondItem="Eb8-dJ-mdk" secondAttribute="bottom" constant="5" id="dkx-5o-x92"/>
-                            <constraint firstItem="Eb8-dJ-mdk" firstAttribute="top" secondItem="XFt-Fi-uE8" secondAttribute="topMargin" constant="5" id="kDY-aB-4IJ"/>
-                            <constraint firstItem="Eb8-dJ-mdk" firstAttribute="width" secondItem="XFt-Fi-uE8" secondAttribute="width" id="rJ3-Bd-Udm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Eb8-dJ-mdk" secondAttribute="trailing" constant="5" id="s3M-id-Fcj"/>
+                            <constraint firstItem="Eb8-dJ-mdk" firstAttribute="height" secondItem="XFt-Fi-uE8" secondAttribute="height" id="Cqb-J5-bdv"/>
+                            <constraint firstItem="Eb8-dJ-mdk" firstAttribute="centerY" secondItem="XFt-Fi-uE8" secondAttribute="centerY" id="ROf-Uf-7lC"/>
+                            <constraint firstItem="Eb8-dJ-mdk" firstAttribute="centerX" secondItem="XFt-Fi-uE8" secondAttribute="centerX" id="itb-2v-IFT"/>
+                            <constraint firstItem="Eb8-dJ-mdk" firstAttribute="width" secondItem="XFt-Fi-uE8" secondAttribute="width" id="rTc-Wo-Ygu"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="VbJ-me-S8g"/>
-                                <exclude reference="rJ3-Bd-Udm"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="ScrollView" destination="Eb8-dJ-mdk" id="Wg8-A5-uME"/>
@@ -289,7 +279,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="PRu-U5-4s9">
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="PRu-U5-4s9">
                                         <rect key="frame" x="270" y="164" width="20" height="0.0"/>
                                         <color key="color" red="0.38555472480000003" green="0.54176210729999996" blue="0.42677315910000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
