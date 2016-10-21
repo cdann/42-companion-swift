@@ -13,7 +13,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cFZ-AB-frF">
-                    <rect key="frame" x="0.0" y="10" width="600" height="86"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="86"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPQ-gd-q2k">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="26"/>
@@ -23,7 +23,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sections" translatesAutoresizingMaskIntoConstraints="NO" id="Kdg-kR-VNM">
-                            <rect key="frame" x="210" y="26" width="180" height="60"/>
+                            <rect key="frame" x="25" y="26" width="550" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="9pa-76-bSQ"/>
                             </constraints>
@@ -38,7 +38,7 @@
             </subviews>
             <color key="tintColor" red="0.65616445769999998" green="1" blue="0.92451346580000004" alpha="0.82314116380000002" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="cFZ-AB-frF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Awu-nU-plq"/>
+                <constraint firstItem="cFZ-AB-frF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Awu-nU-plq"/>
                 <constraint firstItem="cFZ-AB-frF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RHA-ue-sbN"/>
                 <constraint firstAttribute="trailing" secondItem="cFZ-AB-frF" secondAttribute="trailing" id="agV-r7-6mu"/>
             </constraints>

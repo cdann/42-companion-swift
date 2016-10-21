@@ -57,7 +57,6 @@ class UserTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toImage", let ctr = segue.destinationViewController as? PictureScrollViewController {
-            print(user.image)
             ctr.image = user.image
         }
     }
@@ -71,7 +70,6 @@ class UserTableViewController: UITableViewController {
             
             cell.info = user.info
             user.image = cell.UserImage.image
-            print(user.image)
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCellWithIdentifier("skillCell", forIndexPath: indexPath) as! SkillTableViewCell

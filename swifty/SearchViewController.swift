@@ -8,11 +8,10 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITextFieldDelegate {
+class SearchViewController: UIViewController, UITextFieldDelegate, ApiCallManagerDelegate {
 
     @IBOutlet weak var NotFoundLabel: UILabel!
     @IBOutlet weak var SearchField: UITextField!
-    @IBOutlet weak var SearchButton: UIButton!
     @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     
     var user: User?
@@ -27,6 +26,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         let placeholdercolor = UIColor(colorLiteralRed: 0.34, green: 0.54, blue: 0.47, alpha: 0.5)
         SearchField.attributedPlaceholder = NSAttributedString(string:"user search",attributes:[NSForegroundColorAttributeName: placeholdercolor])
         SearchField.autocorrectionType = UITextAutocorrectionType.No
+        ApiManager.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,36 +41,42 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool{
+        SearchField.resignFirstResponder()
         launchSearch()
         return true
     }
+    
     
     func launchSearch() {
         if let txt =  SearchField.text where txt != "" {
             NotFoundLabel.hidden = true
             loadingSpinner.startAnimating()
-            SearchButton.hidden = true
-            ApiManager.searchUser(txt){
-                user in
-                if user == nil {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.NotFoundLabel.hidden = false
-                    }
-                } else {
-                    print(user)
-                    self.user = user
-                    self.performSegueWithIdentifier("showUser", sender:self)
-                }
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.loadingSpinner.stopAnimating()
-                    self.SearchButton.hidden = false
-                }
+            ApiManager.searchUser(txt)
+        }
+    }
+    
+    func treatResponse(response:AnyObject?) {
+        if let usr = response as? User {
+            self.user = usr
+            print(self.user)
+            self.performSegueWithIdentifier("showUser", sender:self)
+        }
+        else {
+            dispatch_async(dispatch_get_main_queue()) {
+                self.NotFoundLabel.hidden = false
             }
+        }
+        dispatch_async(dispatch_get_main_queue()) {
+            self.loadingSpinner.stopAnimating()
         }
     }
 
-    @IBAction func searchClick(sender: UIButton) {
-        launchSearch()
+    
+    func handleErrors(msg:String) {
+        let alertController = UIAlertController(title: "Error", message:
+            msg, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 
 }

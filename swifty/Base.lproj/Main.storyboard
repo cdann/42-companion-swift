@@ -91,7 +91,7 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.34267770400000003" green="0.54644551699999999" blue="0.47640620119999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="UserImage" destination="Cbw-em-ifp" id="nyM-e2-L8V"/>
                                     <outlet property="UserLogin" destination="eJw-eR-Jnn" id="4Na-VZ-m1H"/>
@@ -265,7 +265,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="WoU-aw-Wx2">
-                                <rect key="frame" x="20" y="144" width="560" height="206"/>
+                                <rect key="frame" x="20" y="144" width="560" height="164"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="150" verticalHuggingPriority="150" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="QiA-UU-mux">
                                         <rect key="frame" x="220" y="0.0" width="120" height="120"/>
@@ -289,22 +289,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="PRu-U5-4s9">
-                                        <rect key="frame" x="270" y="171" width="20" height="0.0"/>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="PRu-U5-4s9">
+                                        <rect key="frame" x="270" y="164" width="20" height="0.0"/>
                                         <color key="color" red="0.38555472480000003" green="0.54176210729999996" blue="0.42677315910000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXu-b2-PNq">
-                                        <rect key="frame" x="252" y="178" width="57" height="28"/>
-                                        <color key="backgroundColor" red="0.72732743952556178" green="0.8516603213307693" blue="0.72660641886362709" alpha="0.5260775862068966" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" title="search">
-                                            <color key="titleColor" red="0.34267770400000003" green="0.54644551699999999" blue="0.47640620119999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="searchClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IEN-8F-fUe"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -318,7 +306,6 @@
                     <navigationItem key="navigationItem" title="search" id="GYV-tJ-cgQ"/>
                     <connections>
                         <outlet property="NotFoundLabel" destination="AQt-OB-DmG" id="wHc-iO-jsQ"/>
-                        <outlet property="SearchButton" destination="QXu-b2-PNq" id="YlJ-nU-lOG"/>
                         <outlet property="SearchField" destination="d2z-4N-HXj" id="MDd-ll-ItZ"/>
                         <outlet property="loadingSpinner" destination="PRu-U5-4s9" id="wNw-Vg-4Lz"/>
                         <segue destination="baZ-gw-xsB" kind="show" identifier="showUser" id="dAR-Lo-8lD"/>
