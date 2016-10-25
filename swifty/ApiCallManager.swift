@@ -45,13 +45,13 @@ class ApiCallManager {
                     }
                     self.token = tk
                     self.expire = NSDate().dateByAddingTimeInterval(duration)
-                    print("token \(self.token!) expire \(self.expire!)")
+                    print("token \(self.token!) "/*expire \(self.expire!)"*/)
                     fct()
             }
         }
     }
     
-    func searchUser(login:String/*, fct_result:(User?) -> Void*/) {
+    func searchUser(login:String) {
             let url = "https://api.intra.42.fr/v2/users/"+login.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
             makeRequest(){
                 Alamofire.request(
@@ -66,7 +66,6 @@ class ApiCallManager {
                         if let d = self.delegate {
                             d.treatResponse(nil)
                         }
-                        //fct_result(nil)
                     }
                     else {
                         guard let values = response.result.value as? [String: AnyObject],
@@ -81,7 +80,6 @@ class ApiCallManager {
                             d.treatResponse(usr)
                         }
                     }
-                    //fct_result(usr)
                 }
             
         }

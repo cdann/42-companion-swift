@@ -46,6 +46,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate, ApiCallManage
         return true
     }
     
+    @IBAction func searchButton(sender: AnyObject) {
+        launchSearch()
+    }
     
     func launchSearch() {
         if let txt =  SearchField.text where txt != "" {
