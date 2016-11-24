@@ -35,9 +35,11 @@ class UserTableViewCell: UITableViewCell {
     
     func loadImage(url_image:String) {
         let url = NSURL(string: url_image )
-        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-        let img = UIImage(data: data!)!
-        UserImage.image = img
+        if let data = NSData(contentsOfURL: url!){ //make sure your image in this url does exist, otherwise unwrap in a if let check{
+            let img = UIImage(data: data)!
+            UserImage.image = img
+        }
+
     }
     
    /* func cropToBounds(image: UIImage, width: Double, height: Double) -> UIImage {

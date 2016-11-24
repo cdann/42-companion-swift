@@ -29,10 +29,11 @@ class User : CustomStringConvertible {
         }
     }
     
+    
+    
     init?(values:[String: AnyObject]) {
         if let log = values["login"] as? String ,
           let mail = values["email"] as? String,
-          let phone = values["phone"] as? String,
           let name = values["displayname"] as? String ,
           let img = values["image_url"] as? String,
           let cursus = values["cursus_users"] as? [[String: AnyObject]] ,
@@ -65,17 +66,22 @@ class User : CustomStringConvertible {
                 }
 
             }
-            self.info = Info(tel:phone, mail:mail, level:lv, display_name:name, url_image:img)
-            if self.skills.isEmpty || lv == -1{
+            
+            
+            if let phone = values["phone"] as? String {
+                self.info = Info(tel: phone, mail:mail, level:lv, display_name:name, url_image:img)
+            } else {
+                self.info = Info(tel: nil, mail:mail, level:lv, display_name:name, url_image:img)
+            }
+            if  lv == -1{
                 print("cursus_user Malformed data")
-                                //print(cursus)
                 return nil
             }
+            
         }
         else {
             print("user Malformed data :")
-            /*if let _ = values["login"] as? String {
-                print("login ok")
+            /*if let _ = values["login"] as? Stringvar                print("login ok")
             }
             if let _ = values["email"] as? String {
                 print("email ok")

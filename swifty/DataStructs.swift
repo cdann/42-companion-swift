@@ -120,7 +120,7 @@ class Skill {
  } */
 
 struct Info {
-    let tel:String
+    let tel:String?
     let mail: String
     let level: Float
     let display_name : String
