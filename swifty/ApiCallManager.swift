@@ -43,10 +43,12 @@ class ApiCallManager {
                             print("Malformed data received from token service :"+String(response.result.value))
                             return
                     }
-                    self.token = tk
-                    self.expire = NSDate().dateByAddingTimeInterval(duration)
-                    print("token \(self.token!) "/*expire \(self.expire!)"*/)
-                    fct()
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.token = tk
+                        self.expire = NSDate().dateByAddingTimeInterval(duration)
+                        print("token \(self.token!) "/*expire \(self.expire!)"*/)
+                        fct()
+                    }
             }
         }
     }
@@ -64,7 +66,9 @@ class ApiCallManager {
                     if response.response?.statusCode == 404 {
                         print("404")
                         if let d = self.delegate {
-                            d.treatResponse(nil)
+                            dispatch_async(dispatch_get_main_queue()) {
+                                d.treatResponse(nil)
+                            }
                         }
                     }
                     else {
@@ -77,7 +81,9 @@ class ApiCallManager {
                                 return
                         }
                         if let d = self.delegate {
-                            d.treatResponse(usr)
+                            dispatch_async(dispatch_get_main_queue()) {
+                                d.treatResponse(usr)
+                            }
                         }
                     }
                 }
