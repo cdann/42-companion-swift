@@ -50,7 +50,14 @@ class Project {
             mark = mrk
         } else if let nm = Json["project"]?["name"]as? String {
             self.name = nm
-            self.status = "null"
+            let stat = Json["status"] as? String
+            if stat  == "in_progress" || stat == "waiting_for_correction"{
+                self.status = "In progress"
+            }
+            else {
+                print (Json["status"] as? String)
+                self.status = "null"
+            }
             self.mark = 0
         }
         else {
